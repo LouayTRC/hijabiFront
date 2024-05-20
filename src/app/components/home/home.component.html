@@ -1,0 +1,68 @@
+<!--BANNER-->
+<img src="../../../assets/images/banner.jpg" class="w-100" alt="">
+<div class="scrolling-text bgc Cinzel fw-bold pt-2  ">
+  <p>LIVRAISON GRATUITE MONDIAL RELAY À PARTIR DE 80DT</p>
+</div>
+
+<!--ABOUT US-->
+
+<div class="d-flex justify-content-center mt-5">
+    <div class="text-center Cinzel w-50  ">
+        <h4>Vêtements pour la femme musulmane</h4>
+        <p>
+            Hijabify boutique vous propose  des vêtements aux couleurs 
+            tendances pour les femmes musulmanes. Vous retrouverez des vêtements amples et 
+            longs pour respecter au maximum votre valeur et votre éthique. Vous trouverez également
+             une collection de vêtements long et amples pour toutes les femmes. Vous trouverez 
+             une collection de abayas, khimars et hijabs amples et tendances. 
+             Hijabify boutique c'est aussi des vêtements modest fashion pour les petits comme
+              les grands budget. Découvrez également notre collection de vêtements grande 
+              taille pour femme musulmane.
+        </p>
+        <button [routerLink]="['/categorie/','Tous Les Produits']" class="button bgc border-0 p-3 px-5 ">VOIR TOUS LES ARTICLES</button>
+    </div>
+</div>
+
+<!--solde-->
+<img src="assets/images/solde.jpg" class="w-100 mt-5" alt="">
+
+<img src="../../../assets/images/sale.png" class="w-100" alt="">
+<img src="../../../assets/images/icon-_2.png" class="w-100" alt="">
+
+
+<!--nouveauté-->
+<h4 class="text-center Cinzel fw-medium m-5 ">LES DERNIÈRES NOUVEAUTÉS</h4>
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let p of products;index as i;">
+            <div class="col-12 col-lg-3 card Cinzel  border-0  mb-lg-5  " *ngIf="i<8">
+                <img [src]="p.pics[0]"  alt="">
+                <div>{{p.name}}</div>
+                <div class="fw-bold ">{{p.price | number:'2.3'}} TND</div>
+            </div>
+        </ng-container>
+        
+    </div>
+    <div class="d-flex justify-content-center m-5">
+        <button [routerLink]="['/categorie/','tous']" class="button bgc border-0 p-3 px-5 Cinzel ">TOUT AFFICHER</button>
+    </div>
+
+<!--3-->
+
+    <div class="container mb-5">
+        <div class="row">
+            <a  [routerLink]="['/categorie/',' KHIMARS']" class="col-12 col-lg-4 mb-3 ">
+                <img src="assets/images/khimars.png" class="w-100" alt="">
+            </a>
+            <a [routerLink]="['/categorie/','IBAYA']" class="col-12 col-lg-4 mb-3">
+                <img src="assets/images/abaya-anikaboutique.png" class="w-100" alt="">
+            </a>
+            <a [routerLink]="['/categorie/',' PROMOS']" class="col-12 col-lg-4 mb-3 ">
+                <img src="assets/images/prixdoux.png" class="w-100" alt="">
+            </a>
+        </div>
+    </div>
+
+   
+</div>

@@ -1,0 +1,56 @@
+<a id="topi"></a>
+<hr>
+<div class="container">
+    <div class="fs-2 Cinzel text-uppercase ">{{categorie}}</div>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid Cinzel">
+            <a class="navbar-toggler border-0 " data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-funnel-fill text-dark " viewBox="0 0 16 16">
+                    <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5z"/>
+                </svg>
+            </a>
+          
+          <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Filtres</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="navbar-nav d-flex justify-content-between   p-3 p-lg-0   ">
+
+                <div class="d-flex  align-items-lg-center flex-column  flex-lg-row  ">
+                   
+                </div>
+
+                <div class="d-flex align-items-lg-center flex-column  flex-lg-row">
+              
+                    <small class="text-secondary w-100 ms-3">{{filtredProducts.length}} produits</small>
+                  </div>
+                  
+               
+                    
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!--cards-->
+      <div class="container" *ngIf="filtredProducts!=undefined">
+        <div class="row">
+            <div [routerLink]="['/article/'+p._id]"   class="col-12 col-lg-3 card Cinzel  border-0  mb-lg-5 pointer " *ngFor="let p of filtredProducts">
+                <img [src]="p.pics[0]"  alt="">
+                <div>{{p.name}}</div>
+                <div class="d-flex justify-content-between ">
+                    <div class="fw-bold ">{{p.price | number:'2.3'}} TND</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <a href="#topi" class="btn bgc position-fixed fix px-2 py-2 rounded-circle btn-top    " >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V4.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 4.707V11.5A.5.5 0 0 0 8 12z"/>
+        </svg>
+    </a>
+
+</div>

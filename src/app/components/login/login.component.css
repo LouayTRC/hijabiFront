@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lilita+One&family=Protest+Guerrilla&display=swap');
+
+.Cinzel {
+    font-family: "Cinzel", serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+
+.bgc{
+    background-color: #f7f1ee;
+ 
+}
+
+.input-group {
+  position: relative;
+}
+
+.input {
+  border: 3px solid #6563636a;
+  background: none;
+  padding: 1rem;
+  font-size: 1rem;
+  color: black;
+  width: 450px;
+  height: 7vh;
+}
+
+.user-label {
+  position: absolute;
+  left: 15px;
+  color: #000;
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition: 350ms;
+}
+
+.input:focus,
+input:valid {
+  outline: none;
+  --angle: 0deg;
+  border: 3px solid;
+  border-image: black;
+}
+
+
+
+.input:focus~label,
+input:valid~label {
+  transform: translateY(-100%) scale(1);
+  background-color: rgba(255, 255, 255, 0);
+  padding: 0 .2em;
+  color: black;
+}

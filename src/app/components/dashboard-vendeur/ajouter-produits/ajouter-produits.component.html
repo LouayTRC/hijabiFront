@@ -1,0 +1,119 @@
+<h2 class="Cinzel">Ajouter Produit</h2>
+
+<div class="container  Cinzel mt-5 mb-5 ">
+    <div class="row d-flex  justify-content-center ">
+        <form action="" [formGroup]="newProduct">
+
+        <div class="col-12 d-flex justify-content-center  mt-3">
+            <div>
+                <label for="formFileLg" class="form-label">Photos</label>
+                <input class="input form-control form-control-lg rounded-0 border-secondary  " (change)="onFileChange($event)"  id="formFileLg" type="file" multiple accept="image/*">
+            </div>
+        </div>
+            
+        <div class="col-12 d-flex justify-content-center  mt-4">
+            <section class="">
+                <div class="input-group">
+                    <input class="input " autocomplete="off" name="name" formControlName="name" type="text" required="">
+                    <label class="user-label">name</label>
+                </div>
+            </section>
+        </div>
+        
+
+        <div class="col-12 d-flex justify-content-center mt-4">
+            <section>
+                <div class="input-group">
+                    <input class="input " autocomplete="off" name="description" formControlName="description" type="text" required="">
+                    <label class="user-label">Description</label>
+                </div>
+            </section>
+        </div>
+
+
+        <div class="col-12 d-flex justify-content-center  mt-4">
+            <section class="">
+                <div class="input-group">
+                    <input class="input " autocomplete="off"  min="1" name="qte" formControlName="qte" type="number" required="">
+                    <label class="user-label">Quantity</label>
+                </div>
+            </section>
+        </div>
+        
+       
+
+
+        <div class="col-12 d-flex justify-content-center mt-4">
+            <section>
+                <div class="input-group">
+                    <input class="input " autocomplete="off" min="1" name="price" formControlName="price" type="number" required="">
+                    <label class="user-label">Price</label>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-12 d-flex justify-content-center  mt-3 px-5 " *ngIf="categories!=undefined">
+            <div class="d-flex   flex-column w-50 px-5">
+                <label for="formFileLg" class="form-label">Category</label>
+                <select name="category " formControlName="category" id="" class="form-select w-100 rounded-0 border-3 focus-ring  focus-ring-dark border-secondary   " >
+                    <option *ngFor="let c of categories" [value]="c._id">{{c.name}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-12 d-flex justify-content-center  mt-3 px-5 " *ngIf="categories!=undefined">
+            <div class="d-flex   flex-column w-50 px-5">
+                <label for="formFileLg" class="form-label">Status</label>
+                <select name="category " formControlName="category" id="" class="form-select w-100 rounded-0 border-3 focus-ring  focus-ring-dark border-secondary   " >
+                    <option value="1">En stock<option>
+                    <option value="0">hors stock<option>
+                </select>
+            </div>
+        </div>
+
+         <div class="col-12 d-flex justify-content-center  mt-4 w-100  ">
+            <section class="w-100 d-flex justify-content-center  ">
+                <div class="input-group w-25 ">
+                    <div formArrayName="sizes"  class="w-100 ">
+                        <div *ngFor="let pv of Sizes.controls;index as i">
+                            <label for="">Size n°{{i+1}}</label>
+                            <input type="number" class="w-100" [formControlName]="i" >
+                        </div>
+                        <input type="button" value="add size" class="btn btn-secondary btn-sm mt-3 w-100 " (click)="onAjouterS()"> <br>
+                    </div>
+                </div>
+                
+            </section>
+        </div>
+
+        <div class="col-12 d-flex justify-content-center  mt-4">
+            <section  class="w-100 d-flex justify-content-center  ">
+                <div class="input-group  w-25" >
+                    <div formArrayName="couleurs" class="w-100 ">
+                        <div *ngFor="let pv of Couleurs.controls;index as i">
+                            <label for="">Couleur n°{{i+1}}</label>
+                            <input type="text"  class="w-100 " [formControlName]="i">
+                        </div>
+                        <input type="button" value="add couleur" class="btn btn-secondary btn-sm w-100 mt-3     " (click)="onAjouterC() "> <br>
+                    </div>
+                </div>
+                
+            </section>
+        </div>
+            
+            
+
+  
+
+
+
+
+
+            
+
+    </form>
+
+        
+
+    </div>
+</div>

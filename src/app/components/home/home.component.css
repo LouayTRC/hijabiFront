@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lilita+One&family=Protest+Guerrilla&display=swap');
+
+.Cinzel {
+    font-family: "Cinzel", serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+
+.bgc{
+    background-color: rgb(247 241 238);
+ 
+}
+/*ANIMATION*/
+.scrolling-text {
+    overflow: hidden;
+    white-space: nowrap;
+    height: 5vh;
+    
+  }
+
+  .scrolling-text p {
+    display: inline-block;
+    margin: 0;
+    animation: scroll 15s linear infinite;
+
+  }
+
+  @keyframes scroll {
+    0% { transform: translateX(300%); }
+    100% { transform: translateX(-300%); }
+  }
+
+
+/*----------*/

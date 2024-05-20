@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lilita+One&family=Protest+Guerrilla&display=swap');
+
+.Cinzel {
+    font-family: "Cinzel", serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+
+.bgc{
+    background-color: #f7f1ee;
+ 
+}
+
+.min{
+    min-height: 90vh;
+}
+.router-link-active{
+    font-weight: 900 ;
+}

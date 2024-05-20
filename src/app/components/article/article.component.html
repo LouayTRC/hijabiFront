@@ -1,0 +1,276 @@
+<div class="container my-5">
+  <div class="row " *ngIf="product!=undefined">
+    <!--album section-->
+    <div class="col-lg-8 col-12 ">
+      <div class="container">
+        <div class="row">
+          <img class="col-12" *ngIf="product.pics.length>=1" [src]="product.pics[0]" alt="">
+        </div>
+        <div class="row mt-2">
+          <img class="col-6  " *ngIf="product.pics.length>=2" [src]="product.pics[0]" alt="">
+          <img class="col-6" *ngIf="product.pics.length>=3" [src]="product.pics[0]" alt="">
+
+        </div>
+      </div>
+    </div>
+
+    <!--add section-->
+    <div class="col-lg-4 col-12 Cinzel panier  mt-4 mt-md-0">
+      <div>
+        <img src="../../../assets/images/logoCompany.jpg" alt="" class="logoVendeur rounded-circle   ">
+        <small class="mx-1">{{product.category.name}}</small>
+      </div>
+      <div class="fs-4 fw-bold ">{{product.name}}</div>
+      <div class="fs-5">{{product.price | number:'2.3'}} TND </div>
+
+      <div>
+        <div class="fs-6 text-secondary ">taille</div>
+
+        <ng-container *ngFor="let s of product.sizes">
+          <input type="radio" class="btn-check  " name="taille" [id]="s" autocomplete="off">
+          <label class="btn-outline-darks " [for]="s">{{s}}</label>
+        </ng-container>
+        
+        
+
+
+      </div>
+
+      <div class="mt-2 ">
+        <div class="fs-6 text-secondary mb-2 ">couleur</div>
+        <div class="radio-input">
+
+          
+          <ng-container *ngFor="let c of product.couleurs">
+            <input type="radio" class="btn-check  " name="color" [id]="c" autocomplete="off">
+            <label class="btn-outline-darks " [for]="c">{{c}}</label>
+          </ng-container>
+
+
+        </div>
+      </div>
+
+      <div class="my-3  ">
+        <div class="fs-6 text-secondary mb-2 ">Quantité</div>
+        <input type="number" min="1" value="1" max="99" class="number rounded-1 text-center  mx-3   border-1 " #qte>
+
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <button class=" col button bgc   border-0 p-3 px-5 my-3  " (click)="addToCart(qte.value)">Ajouter Au
+            Panier</button>
+        </div>
+      </div>
+
+      <div class="d-flex  flex-column ">
+        <span class="my-2">{{product.description}}</span>
+
+
+
+        <div class="fs-6 text-secondary mb-2 ">Rate </div>
+        <div class="rating">
+          <input type="radio" id="star-1" name="star-radio" value="star-1">
+          <label for="star-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path pathLength="360"
+                d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z">
+              </path>
+            </svg>
+          </label>
+          <input type="radio" id="star-2" name="star-radio" value="star-1">
+          <label for="star-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path pathLength="360"
+                d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z">
+              </path>
+            </svg>
+          </label>
+          <input type="radio" id="star-3" name="star-radio" value="star-1">
+          <label for="star-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path pathLength="360"
+                d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z">
+              </path>
+            </svg>
+          </label>
+          <input type="radio" id="star-4" name="star-radio" value="star-1">
+          <label for="star-4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path pathLength="360"
+                d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z">
+              </path>
+            </svg>
+          </label>
+          <input type="radio" id="star-5" name="star-radio" value="star-1">
+          <label for="star-5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path pathLength="360"
+                d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z">
+              </path>
+            </svg>
+          </label>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--comment section-->
+<div class="container my-5 ">
+  <div class="row ">
+    <div class="col-lg-8 col-12  ">
+      <div class="container">
+        <!--comment input-->
+        <div class="row d-md-flex justify-content-center justify-content-lg-start  ms-5 ms-lg-0  ">
+          <div class="col-2 d-flex  justify-content-end ">
+            <button class="btn btn btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#comments"
+              aria-expanded="false" aria-controls="collapseExample">
+              comments
+            </button>
+          </div>
+          <ng-container *ngIf="role">
+            <div *ngIf="user && role.name=='Client' ">
+
+              <div class="col-6">
+                <input type="text" class="form-control  border-black focus-ring focus-ring-dark " #comment
+                  placeholder="Ecrivez un comment">
+              </div>
+              <div class="col-3">
+                <button class="btn btn-outline-dark " (click)="addComment(comment.value)">Send</button>
+              </div>
+            </div>
+          </ng-container>
+
+        </div>
+
+        <!--aff comments-->
+        <div class="row ">
+          <h2></h2>
+          <div class="container  py-5 collapse " id="comments">
+            <div class="row d-flex justify-content-start ">
+              <div class="col-md-12 col-lg-12 col-xl-12">
+                <div class="card shadow ">
+                  <div class="card-body p-4">
+                    <h4 class="text-center mb-4 pb-2">Comments</h4>
+
+                    <div class="row ">
+                      <div class="col">
+                        <div class="d-flex flex-start" *ngFor="let c of product.comments">
+                          <img class="rounded-circle shadow-1-strong me-3" [src]="c.Client.user.pdp" alt="avatar"
+                            width="65" height="65" />
+                          <div class="flex-grow-1 flex-shrink-1">
+                            <div>
+                              <div class="d-flex justify-content-between align-items-center">
+                                <p class="mb-1">
+                                  {{c.Client.user.fullname}}<span class="small">- 2 hours ago</span>
+                                </p>
+
+                                <div>
+                                  <a class="text-decoration-none  text-black mx-2 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                      class="bi bi-reply " viewBox="0 0 16 16">
+                                      <path
+                                        d="M6.598 5.013a.144.144 0 0 1 .202.134V6.3a.5.5 0 0 0 .5.5c.667 0 2.013.005 3.3.822.984.624 1.99 1.76 2.595 3.876-1.02-.983-2.185-1.516-3.205-1.799a8.7 8.7 0 0 0-1.921-.306 7 7 0 0 0-.798.008h-.013l-.005.001h-.001L7.3 9.9l-.05-.498a.5.5 0 0 0-.45.498v1.153c0 .108-.11.176-.202.134L2.614 8.254l-.042-.028a.147.147 0 0 1 0-.252l.042-.028zM7.8 10.386q.103 0 .223.006c.434.02 1.034.086 1.7.271 1.326.368 2.896 1.202 3.94 3.08a.5.5 0 0 0 .933-.305c-.464-3.71-1.886-5.662-3.46-6.66-1.245-.79-2.527-.942-3.336-.971v-.66a1.144 1.144 0 0 0-1.767-.96l-3.994 2.94a1.147 1.147 0 0 0 0 1.946l3.994 2.94a1.144 1.144 0 0 0 1.767-.96z" />
+                                    </svg>
+                                    <span class="small">reply</span>
+                                  </a>
+                                  <a href="#reply1" class="text-decoration-none  text-black " data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                      class="bi bi-caret-down" viewBox="0 0 16 16">
+                                      <path
+                                        d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659" />
+                                    </svg>
+                                  </a>
+                                </div>
+
+                              </div>
+                              <p class="small mb-0">
+                                {{c.description}}
+                              </p>
+                            </div>
+                            <!--reply-->
+                            <div class="collapse" id="reply1">
+                              <ng-container *ngIf="user">
+                                <div class="d-flex flex-start mt-4" *ngIf="user.user_id==product.vendeur.user._id">
+                                  <a class="me-3" href="#">
+                                    <img class="rounded-circle shadow-1-strong" [src]="product.vendeur.user.pdp"
+                                      alt="avatar" width="65" height="65" />
+                                  </a>
+                                  <div class="flex-grow-1 flex-shrink-1">
+                                    <div>
+                                      <div class="d-flex justify-content-between align-items-center">
+                                        <p class="mb-1">
+                                          {{product.vendeur.user.fullname}} <span class="small">- 4 hours ago</span>
+                                        </p>
+                                      </div>
+
+                                      <div class="mb-3">
+                                        <textarea #response
+                                          class="form-control focus-ring focus-ring-dark border-black "
+                                          id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        <a (click)="reply(response.value,c)"
+                                          class="d-flex justify-content-end align-items-center text-decoration-none text-dark ">
+                                          send
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                            fill="currentColor" class="bi bi-send mx-2" viewBox="0 0 16 16">
+                                            <path
+                                              d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z" />
+                                          </svg>
+                                        </a>
+
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </ng-container>
+                              <div class="d-flex flex-start mt-4" *ngFor="let r of c.replys">
+                                <a class="me-3" href="#">
+                                  <img class="rounded-circle shadow-1-strong" [src]="product.vendeur.user.pdp"
+                                    alt="avatar" width="65" height="65" />
+                                </a>
+                                <div class="flex-grow-1 flex-shrink-1">
+                                  <div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                      <p class="mb-1">
+                                        {{product.vendeur.user.fullname}}<span class="small">- 3 hours ago</span>
+                                      </p>
+                                    </div>
+                                    <p class="small mb-0">
+                                      {{r.description}}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+
+                          </div>
+                        </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="col-lg-4 col-12 Cinzel d-flex flex-column   ">
+      <div class="fs-4 fw-bold text-center  ">Découvrez également</div>
+
+      <div class="card Cinzel  border-0  mb-lg-5  ">
+        <img src="../../../assets/images/cardimg.jpg" alt="">
+      </div>
+
+    </div>
+  </div>
+</div>

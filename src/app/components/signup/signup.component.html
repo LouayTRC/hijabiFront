@@ -1,0 +1,72 @@
+<div class="container  Cinzel mt-5 ">
+    <div class="row d-flex  justify-content-center ">
+        <form [formGroup]="signupForm" action="">
+            <div class="col-12 Cinzel text-center  fs-3 fw-medium ">
+                Créer un compte
+            </div>
+
+            <div class="col-12 d-flex justify-content-center  mt-5">
+                <section class="">
+                    <div class="input-group">
+                        <input class="input " autocomplete="off" name="fullname" type="text" formControlName="fullname" required="">
+                        <label class="user-label">Fullname</label>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-12 d-flex justify-content-center mt-4">
+                <section>
+                    <div class="input-group">
+                        <input class="input " autocomplete="off" name="username" formControlName="username" type="text" required="">
+                        <label class="user-label">Username</label>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-12 d-flex justify-content-center  mt-4">
+                <section class="">
+                    <div class="input-group">
+                        <input class="input " autocomplete="off" name="email" formControlName="email" type="text" required="">
+                        <label class="user-label">Email</label>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-12 d-flex justify-content-center mt-4">
+                <section>
+                    <div class="input-group">
+                        <input class="input " autocomplete="off" name="password" formControlName="password" type="text" required="">
+                        <label class="user-label">Mot de Passe</label>
+                    </div>
+                </section>
+            </div>
+
+
+            <div class="col-12 d-flex justify-content-center  mt-3">
+                <div>
+                    <label for="formFileLg" class="form-label">Photo</label>
+                    <input class="input form-control form-control-lg rounded-0 border-secondary  " id="formFileLg" type="file" (change)="onFileChange($event)" accept="image/*">
+                </div>
+            </div>
+
+
+            <div class="col-12 d-flex justify-content-center mt-5 " *ngIf="roles!=undefined">
+                <ng-container *ngFor="let r of roles">
+                    <input type="radio" class="btn-check "  name="role" [id]="r._id" formControlName="role" [value]="r._id" autocomplete="off">
+                    <label class="btn-outline-darks px-3  " [for]="r._id">{{r.name}}</label>
+                </ng-container>
+                
+            </div>
+
+        </form>
+        <small class="text-danger text-center mt-2  ">{{erreur}}</small>
+        <button class=" col-3 button bgc  border-0 p-3  my-3  " (click)="signup()">CRÉER</button>
+
+        <a [routerLink]="['/login']" routerLinkActive="router-link-active" class="text-black text-center mb-5">
+            <small>J'ai deja un compte</small>
+        </a>
+
+
+
+    </div>
+</div>
