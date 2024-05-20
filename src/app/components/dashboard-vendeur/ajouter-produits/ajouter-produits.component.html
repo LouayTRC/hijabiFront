@@ -64,7 +64,7 @@
         <div class="col-12 d-flex justify-content-center  mt-3 px-5 " *ngIf="categories!=undefined">
             <div class="d-flex   flex-column w-50 px-5">
                 <label for="formFileLg" class="form-label">Status</label>
-                <select name="category " formControlName="category" id="" class="form-select w-100 rounded-0 border-3 focus-ring  focus-ring-dark border-secondary   " >
+                <select name="status " formControlName="status" id="" class="form-select w-100 rounded-0 border-3 focus-ring  focus-ring-dark border-secondary   " >
                     <option value="1">En stock<option>
                     <option value="0">hors stock<option>
                 </select>
@@ -101,7 +101,9 @@
             </section>
         </div>
             
-            
+        <div class="col-12 d-flex justify-content-center mt-4">
+            <button  class=" col-3 button bgc  border-0 p-3  my-3 mb-4 " (click)="addProduct()">Ajouter</button>
+        </div>
 
   
 
