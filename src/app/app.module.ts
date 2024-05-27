@@ -26,6 +26,7 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFireStorageModule } from '@angular/fire/compat/storage'
 import { environment } from 'src/environments/environment';
+import { UpdateProduitComponent } from './components/dashboard-vendeur/update-produit/update-produit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { environment } from 'src/environments/environment';
     DashboardAdminComponent,
     UsersComponent,
     VendeursComponent,
-    DemandeComponent
+    DemandeComponent,
+    UpdateProduitComponent
   ],
   imports: [
     BrowserModule,

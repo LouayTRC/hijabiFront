@@ -17,6 +17,7 @@ import { VendeursComponent } from './components/dashboard-admin/vendeurs/vendeur
 import { DemandeComponent } from './components/dashboard-admin/demande/demande.component';
 import { adminGuard } from './guard/admin.guard';
 import { vendeurGuard } from './guard/vendeur.guard';
+import { UpdateProduitComponent } from './components/dashboard-vendeur/update-produit/update-produit.component';
 
 const routes: Routes = [
   
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path:'ordres' , component:OrdresComponent},
   {path:'produits' , component:ProduitsComponent},
   {path:'ajouterproduit' , component:AjouterProduitsComponent},
+  {path:'modifierProduit/:id' , component:UpdateProduitComponent},
   ],canActivate:[vendeurGuard]},
 
   {path:'dashboard-admin',component:DashboardAdminComponent,
