@@ -22,4 +22,8 @@ export class CommandService {
   getCommandById(id:number,headers?: HttpHeaders):Observable<Command>{
     return this.http.get<Command>(`${this.baseUrl}/${id}`,{ headers: headers })
   }
+
+  vendeurCommands(headers?: HttpHeaders):Observable<Command[]>{
+    return this.http.get<Command[]>(`${this.baseUrl}/mine`,{ headers: headers })
+  }
 }

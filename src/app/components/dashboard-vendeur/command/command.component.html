@@ -1,0 +1,25 @@
+<h2 class="Cinzel">Command {{command._id}}</h2>
+<div class="table-responsive small Cinzel" *ngIf="command!=undefined">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">client</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of command.Products">
+        <td>{{p._id._id}}</td>
+        <td>{{p._id.name}}</td>
+        <td>{{p._id.category.name}}</td>
+        <td>{{p.qte}}</td>
+        <td>{{p.price | number:'2.3'}} TND</td>
+        <td>{{command.client.user.username}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

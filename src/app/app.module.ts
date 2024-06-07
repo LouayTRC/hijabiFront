@@ -27,6 +27,7 @@ import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFireStorageModule } from '@angular/fire/compat/storage'
 import { environment } from 'src/environments/environment';
 import { UpdateProduitComponent } from './components/dashboard-vendeur/update-produit/update-produit.component';
+import { CommandComponent } from './components/dashboard-vendeur/command/command.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,8 @@ import { UpdateProduitComponent } from './components/dashboard-vendeur/update-pr
     UsersComponent,
     VendeursComponent,
     DemandeComponent,
-    UpdateProduitComponent
+    UpdateProduitComponent,
+    CommandComponent
   ],
   imports: [
     BrowserModule,
